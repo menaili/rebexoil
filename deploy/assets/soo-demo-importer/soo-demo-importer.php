@@ -201,19 +201,20 @@ class Soo_Demo_Importer {
 	/**
 	 * HTML for import demo page
 	 */
-	private function import_demo_page() {
-		$demo = $_POST['demo'];
-		if ( ! array_key_exists( $demo, $this->data ) ) {
-			printf(
-				'<div class="notice warning"><p>%s <a href="%s">%s</a></p></div>',
-				esc_html__( 'This import is invalid.', 'soodi' ),
-				remove_query_arg( 'step' ),
-				esc_html__( 'Please try again', 'soodi' )
-			);
-			return;
-		}
+    private function import_demo_page() {
+        $demo = isset($_POST['demo']) ? $_POST['demo'] : ''; // Set $demo to an empty string if it is not present in $_POST
+        if ( ! array_key_exists( $demo, $this->data ) ) {
+            printf(
+                '<div class="notice warning"><p>%s <a href="%s">%s</a></p></div>',
+                esc_html__( 'This import is invalid.', 'soodi' ),
+                remove_query_arg( 'step' ),
+                esc_html__( 'Please try again', 'soodi' )
+            );
+            return;
+        }
 
-		if ( isset( $_POST['upload_files'] ) ) {
+
+        if ( isset( $_POST['upload_files'] ) ) {
 			$this->upload_files();
 		}
 		?>
