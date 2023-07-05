@@ -1,0 +1,38 @@
+
+
+# BEGIN Hide console URL
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^oilconsolerebex/?$ /oilconsolerebex.php?8iLH4tQ8ocXuPKcpFboBNfM2D7cIilKQ [R,L]
+RewriteCond %{HTTP_COOKIE} !^.*wordpress_logged_in_.*$
+RewriteRule ^oilconsolerebex/?$ /oilconsolerebex.php?8iLH4tQ8ocXuPKcpFboBNfM2D7cIilKQ&redirect_to=/wp-admin/ [R,L]
+RewriteRule ^oilconsolerebex/?$ /wp-admin/?8iLH4tQ8ocXuPKcpFboBNfM2D7cIilKQ [R,L]
+RewriteCond %{SCRIPT_FILENAME} !^(.*)admin-ajax\.php
+RewriteCond %{HTTP_REFERER} !^(.*)timgadceram.dypixlab.com/wp-admin
+RewriteCond %{HTTP_REFERER} !^(.*)timgadceram.dypixlab.com/oilconsolerebex\.php
+RewriteCond %{HTTP_REFERER} !^(.*)timgadceram.dypixlab.com/oilconsolerebex
+RewriteCond %{QUERY_STRING} !^8iLH4tQ8ocXuPKcpFboBNfM2D7cIilKQ
+RewriteCond %{QUERY_STRING} !^action=logout
+RewriteCond %{QUERY_STRING} !^action=rp
+RewriteCond %{QUERY_STRING} !^action=postpass
+RewriteCond %{HTTP_COOKIE} !^.*wordpress_logged_in_.*$
+RewriteRule ^.*wp-admin/?|^.*oilconsolerebex\.php /404 [R,L]
+RewriteCond %{QUERY_STRING} ^loggedout=true
+RewriteRule ^.*$ /oilconsolerebex.php?8iLH4tQ8ocXuPKcpFboBNfM2D7cIilKQ [R,L]
+</IfModule>
+# END Hide console URL
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

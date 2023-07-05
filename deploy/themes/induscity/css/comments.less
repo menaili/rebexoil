@@ -1,0 +1,169 @@
+.bypostauthor {
+	display: block;
+}
+
+.comments-area {
+	clear: both;
+	margin-top: 50px;
+}
+
+.comments-title,
+.comment-reply-title {
+	.mf-heading-primary();
+	text-transform: capitalize;
+}
+
+.comments-title {
+	margin-bottom: 40px;
+}
+
+.comment-reply-title {
+	margin-bottom: 30px;
+}
+
+.comment-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	.children {
+		list-style: none;
+		padding: 0 0 0 80px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+.comments-area {
+	.comment,
+	.pingback {
+		.clearfix;
+		float: left;
+		clear: both;
+		width: 100%;
+		padding-top: 17px;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		article {
+			margin-bottom: 20px;
+		}
+
+		.comment-author {
+			float: left;
+		}
+
+		.comment-edit-link {
+			float: right;
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		.comment-meta {
+			margin-left: 80px;
+			border: 1px solid #efefef;
+			padding: 15px 20px;
+
+			&.no-avatar {
+				margin-left: 0;
+			}
+		}
+
+		.author-name {
+			color: #222222;
+			font-size: 16px;
+			font-weight: 500;
+			text-transform: capitalize;
+			font-style: normal;
+			padding-bottom: 7px;
+			display: block;
+
+			a {
+				color: #222222;
+			}
+		}
+
+		.comment-reply-link {
+			font-size: 14px;
+			font-weight: 500;
+			text-transform: capitalize;
+			position: relative;
+
+			&:hover {
+				color: @primary-color;
+			}
+		}
+	}
+}
+
+.comment-respond {
+	margin-top: 50px;
+
+	.comment-notes {
+		font-size: 16px;
+		font-weight: 400;
+		color: #222222;
+		padding-bottom: 5px;
+	}
+
+	textarea {
+		width: 100%;
+		height: 115px;
+		outline: none;
+	}
+
+	.comment-form-author,
+	.comment-form-email {
+		width: 50%;
+		float: left;
+		padding: 0 15px;
+		margin-bottom: 15px;
+
+		input {
+			width: 100%;
+			height: 50px;
+			outline: none;
+		}
+	}
+
+	.comment-form-author {
+		padding-left: 0;
+	}
+
+	.comment-form-email {
+		padding-right: 0;
+	}
+
+	.comment-form-url {
+		input {
+			width: 100%;
+			height: 50px;
+
+		}
+	}
+
+	.form-submit {
+		clear: both;
+		margin-top: 40px;
+
+		.submit {
+			.btn()
+		}
+	}
+}
+
+.comment-content {
+	padding-bottom: 20px;
+	font-weight: 300;
+
+	a {
+		word-wrap: break-word;
+	}
+}
+
+.comment-awaiting-moderation {
+	display: block;
+}
